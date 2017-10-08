@@ -1,0 +1,44 @@
+{
+    "name": "hellobooks",
+    "version": "1.0.0",
+    "description": "HelloBooks Library Management System",
+    "main": "app.js",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "test": "mocha test/test.js",
+        "start:dev": "nodemon ./bin/www"
+    },
+    "dependencies": {
+        "chai": "*",
+        "mocha": "*",
+        "express": "*",
+        "body-parser": "*",
+        "morgan": "*",
+        "sequelize": "*",
+        "pg": "*",
+        "pg-hstore": "*"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Blaize3/HelloBooksOct20017.git"
+    },
+    "keywords": [
+        "Javascript", "Node"
+    ],
+    "author": "Ode Akugbe",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Blaize3/HelloBooksOct20017/issues"
+    },
+    "homepage": "https://github.com/Blaize3/HelloBooksOct20017#readme",
+    "devDependencies": {
+        "eslint": "^4.8.0",
+        "eslint-config-airbnb": "^16.0.0",
+        "eslint-plugin-import": "^2.7.0",
+        "eslint-plugin-jsx-a11y": "^6.0.2",
+        "eslint-plugin-react": "^7.4.0",
+        "nodemon": "*"
+    }
+}
