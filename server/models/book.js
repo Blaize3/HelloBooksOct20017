@@ -51,7 +51,7 @@ module.exports = (sequelize, DataTypes) => {
     });
 
     Book.associate = (models) => {
-        User.hasMany(models.Borrow, {
+        Book.hasMany(models.Borrow, {
             foreignKey: "bookId",
             as: "book"
         });

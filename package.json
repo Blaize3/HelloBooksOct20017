@@ -7,12 +7,13 @@
         "test": "test"
     },
     "scripts": {
-        "test": "mocha test/test.js",
-        "start:dev": "nodemon ./bin/www"
+        "start:dev": "nodemon ./bin/www",
+        "test": "npm run reset:db && npm run migrate:test && npm run seed:test && mocha test/test.js",
+        "reset:db": "./node_modules/.bin/cross-env NODE_ENV=test node ./test/resetHelper",
+        "migrate:test": "./node_modules/.bin/cross-env NODE_ENV=test sequelize db:migrate",
+        "seed:test": "./node_modules/.bin/cross-env NODE_ENV=test sequelize db:seed:all"
     },
     "dependencies": {
-        "chai": "*",
-        "mocha": "*",
         "express": "*",
         "body-parser": "*",
         "morgan": "*",
@@ -25,7 +26,8 @@
         "url": "git+https://github.com/Blaize3/HelloBooksOct20017.git"
     },
     "keywords": [
-        "Javascript", "Node"
+        "Javascript",
+        "Node"
     ],
     "author": "Ode Akugbe",
     "license": "ISC",
@@ -34,11 +36,15 @@
     },
     "homepage": "https://github.com/Blaize3/HelloBooksOct20017#readme",
     "devDependencies": {
+        "chai": "^4.1.2",
+        "cross-env": "^5.0.5",
         "eslint": "^4.8.0",
         "eslint-config-airbnb": "^16.0.0",
         "eslint-plugin-import": "^2.7.0",
         "eslint-plugin-jsx-a11y": "^6.0.2",
         "eslint-plugin-react": "^7.4.0",
-        "nodemon": "*"
+        "mocha": "^4.0.1",
+        "nodemon": "*",
+        "supertest": "^3.0.0"
     }
 }

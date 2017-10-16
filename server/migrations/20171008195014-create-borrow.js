@@ -1,6 +1,4 @@
 /*eslint-disable*/
-
-'use strict';
 module.exports = {
     up: (queryInterface, Sequelize) => {
         queryInterface.createTable('Borrows', {
@@ -15,24 +13,42 @@ module.exports = {
                 unique: true,
                 type: Sequelize.STRING
             },
+            /* userId: {
+                 allowNull: false,
+                 type: Sequelize.INTEGER,
+                 onDelete: "CASCADE",
+                 references: {
+                     model: "User",
+                     key: "id",
+                     as: "userId"
+                 }
+             },
+             bookId: {
+                 allowNull: false,
+                 type: Sequelize.INTEGER,
+                 onDelete: "CASCADE",
+                 references: {
+                     model: "Book",
+                     key: "id",
+                     as: "bookId"
+                 }
+             },*/
             userId: {
-                allowNull: false,
-                type: Sequelize.INTEGER,
-                onDelete: "CASCADE",
-                references: {
-                    model: "User",
-                    key: "id",
-                    as: "userId"
+                type: Sequelize.STRING,
+                onDelete: 'CASCADE',
+                reference: {
+                    model: 'User',
+                    key: 'id',
+                    as: 'userId',
                 }
             },
             bookId: {
-                allowNull: false,
-                type: Sequelize.INTEGER,
-                onDelete: "CASCADE",
-                references: {
-                    model: "Book",
-                    key: "id",
-                    as: "bookId"
+                type: Sequelize.STRING,
+                onDelete: 'CASCADE',
+                reference: {
+                    model: 'Book',
+                    key: 'id',
+                    as: 'bookId',
                 }
             },
             returnDueDate: {
